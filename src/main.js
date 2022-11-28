@@ -117,7 +117,10 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setClearColor(0xffffff, 0)
 renderer.setSize(window.innerWidth, window.innerHeight)
+
 renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMappingExposure = 1.2
+
 camera.position.setZ(30)
 
 // const geometry = new THREE.TorusGeometry(10, 3, 16, 100)
@@ -126,7 +129,7 @@ camera.position.setZ(30)
 // const torus = new THREE.Mesh(geometry, material)
 // scene.add(torus)
 
-const pointLight = new THREE.PointLight(0xffffff, 1.5)
+const pointLight = new THREE.PointLight(0xffffff, 1)
 pointLight.position.set(5, 5, 5)
 const ambientLight = new THREE.AmbientLight(0xffffff, 2.5)
 scene.add(pointLight, ambientLight)
